@@ -86,12 +86,12 @@ const HomePopularCourse: FC = () => {
           md: 8,
         },
         pb: 14,
-        backgroundColor: 'background.default',
+        backgroundColor: '#ecf3f3',
       }}
     >
       <Container maxWidth="lg">
         <Grid container spacing={2}>
-          <Grid item xs={6} md={3}>
+          <Grid item xs={6} md={5}>
             <Box
               sx={{
                 height: '100%',
@@ -101,13 +101,13 @@ const HomePopularCourse: FC = () => {
                 justifyContent: { xs: 'center', md: 'flex-start' },
               }}
             >
-              <Typography variant="h3" sx={{ mt: { xs: 0, md: -5 }, fontSize: { xs: 30, md: 48 }, fontWeight:700, color:'secondary.main' }}>
-                WHY JOIN NOBLE?
+              <Typography variant="h2" sx={{ mt: { xs: 0, md: -5 }, fontSize: { xs: 30, md: 48 }, fontWeight:700, color:'secondary.main' }}>
+                Why join Noble?
               </Typography>
             </Box>
           </Grid>
 
-          <Grid item xs={12} md={9}>
+          <Grid item xs={12} md={16}>
             <Slider {...sliderConfig}>
               {data.map((item) => (
                 <CourseCardItem key={String(item.id)} item={item} />

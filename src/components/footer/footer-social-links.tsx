@@ -6,19 +6,19 @@ import { SocialLink } from '@/interfaces/social-link'
 export const socialLinks: SocialLink[] = [
   {
     name: 'Instagram',
-    link: '#',
+    link: 'https://instagram.com/nobleschoollife',
     icon: '/images/icons/instagram.svg',
   },
-  {
-    name: 'YouTube',
-    link: '#',
-    icon: '/images/icons/youtube.svg',
-  },
-  {
-    name: 'Twitter',
-    link: '#',
-    icon: '/images/icons/twitter.svg',
-  }
+  // {
+  //   name: 'YouTube',
+  //   link: '#',
+  //   icon: '/images/icons/youtube.svg',
+  // },
+  // {
+  //   name: 'Twitter',
+  //   link: '#',
+  //   icon: '/images/icons/twitter.svg',
+  // }
 ]
 
 interface SocialLinkItemProps {

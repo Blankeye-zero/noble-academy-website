@@ -11,7 +11,7 @@ const HomeNewsLetter: FC = () => {
       <Container>
         <Box
           sx={{
-            backgroundColor: 'secondary.main',
+            backgroundColor: 'secondary.light',
             borderRadius: 10,
             py: { xs: 4, md: 10 },
             px: { xs: 4, md: 8 },
