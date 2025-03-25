@@ -165,6 +165,7 @@ const HomeHero: FC = () => {
                 boxShadow: 1,
                 borderRadius: 3,
                 px: 2,
+                mx:2,
                 py: 1.4,
                 zIndex: 1,
                 backgroundColor: 'background.paper',
@@ -186,7 +187,7 @@ const HomeHero: FC = () => {
                   '& img': { width: '32px !important', height: 'auto' },
                 }}
               >
-                <Image src="/images/certificate.png" alt="Certificate icon" width={50} height={50} quality={97} />
+                <img src="/images/certificate.png" alt="Certificate icon"  style={{width:'min(100%, 30px)', height:'50px'}} />
               </Box>
               <Box>
                 <Typography
@@ -201,7 +202,7 @@ const HomeHero: FC = () => {
               </Box>
             </Box>
             <Box sx={{ lineHeight: 0}} >
-              <Image src="/images/unsplash-1.jpg" width={1000} height={787} alt="Hero img" objectFit='cover' style={{borderRadius: '20px'}}  />
+              <img src="/images/unsplash-1.jpg"  alt="Hero img" style={{borderRadius: '20px',objectFit:'cover', width:'min(100%, 750px)', height:'787px'}}  />
             </Box>
           </Grid>
         </Grid>
