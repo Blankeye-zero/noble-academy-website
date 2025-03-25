@@ -38,7 +38,9 @@ const App: FC<AppPropsWithLayout> = (props: AppPropsWithLayout) => {
       }
     })
 
-    const handleRouteChange = () => posthog?.capture('$pageview')
+    const handleRouteChange:()=>void = () => {
+      posthog?.capture('$pageview');
+    } 
 
     Router.events.on('routeChangeComplete', handleRouteChange);
 
