@@ -78,7 +78,7 @@ const HomeTestimonial: FC = () => {
                 fontWeight: 'bold',
               }}
             >
-              Testimonial: What our{' '}
+              What our{' '}
               <Typography
                 component="mark"
                 sx={{
@@ -89,7 +89,7 @@ const HomeTestimonial: FC = () => {
                   backgroundColor: 'unset',
                 }}
               >
-                Students{' '}
+                Parents{' '}
                 <Box
                   sx={{
                     position: 'absolute',
@@ -105,19 +105,19 @@ const HomeTestimonial: FC = () => {
               Say
             </Typography>
 
-            <StyledSlickContainer>
+            {/* <StyledSlickContainer>
               <Slider ref={sliderRef} {...sliderConfig}>
                 {data.map((item, index) => (
                   <TestimonialItem key={String(index)} item={item} />
                 ))}
               </Slider>
-            </StyledSlickContainer>
+            </StyledSlickContainer> */}
           </Grid>
-          <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
+          {/* <Grid item xs={12} md={6} sx={{ display: { xs: 'none', md: 'block' } }}>
             <Box sx={{ width: { xs: '100%', md: '90%'} }}>
               <Image src="/images/faseem.png" width={520} height={540} quality={97}  alt="Testimonial img" objectFit='cover' style={{borderRadius: '360px'}}/>
             </Box>
-          </Grid>
+          </Grid> */}
         </Grid>
       </Container>
     </Box>

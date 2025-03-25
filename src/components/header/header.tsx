@@ -19,9 +19,9 @@ const Header: FC = () => {
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Logo />
           <Box sx={{ ml: 'auto', display: { xs: 'inline-flex', md: 'none' } }}>
-            <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
+            {/* <IconButton onClick={() => setVisibleMenu(!visibleMenu)}>
               <Menu />
-            </IconButton>
+            </IconButton> */}
           </Box>
           <Box
             sx={{
@@ -45,7 +45,7 @@ const Header: FC = () => {
           >
             <Box/>
             {/* <Box /> Magic space */}
-            <Navigation />
+            {/* <Navigation /> */}
             {/* <AuthNavigation /> */}
             {visibleMenu && matchMobileView && (
               <IconButton

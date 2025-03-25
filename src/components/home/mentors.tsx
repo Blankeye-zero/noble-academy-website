@@ -96,11 +96,11 @@ const HomeOurMentors: FC = () => {
           Our Parent Testimonials
         </Typography>
 
-        <Slider {...sliderConfig}>
+        {/* <Slider {...sliderConfig}>
           {data.map((item) => (
             <MentorCardItem key={String(item.id)} item={item} />
           ))}
-        </Slider>
+        </Slider> */}
       </Container>
     </Box>
   )

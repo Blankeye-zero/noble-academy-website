@@ -9,11 +9,11 @@ export const socialLinks: SocialLink[] = [
     link: 'https://instagram.com/nobleschoollife',
     icon: '/images/icons/instagram.svg',
   },
-  // {
-  //   name: 'YouTube',
-  //   link: '#',
-  //   icon: '/images/icons/youtube.svg',
-  // },
+  {
+    name: 'Google Maps',
+    link: '',
+    icon: '/images/icons/google-maps.svg',
+  },
   // {
   //   name: 'Twitter',
   //   link: '#',
