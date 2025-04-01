@@ -11,15 +11,17 @@ const Footer: FC = () => {
       component="footer"
       sx={{ backgroundColor: 'primary.main', py: { xs: 6, md: 10 }, color: 'primary.contrastText' }}
     >
-      <Container>
+      <Container sx={{mx: {md: '40%', xs: '5%'} }}>
         <Grid container spacing={1}>
           <Grid item xs={12} md={5}>
-            <Box sx={{ width: { xs: '100%', md: 360 }, mb: { xs: 3, md: 0 } }}>
-              <Typography component="h2" variant="h1" sx={{ mb: 2 }}>
+            <Box sx={{ width: { xs: '100%', md: 360 }, mb: { xs: 3, md: 0 }, textAlign:'center'}}>
+              <Typography component="h1" variant="h1" sx={{ mb: 2 }}>
                 Noble Academy
               </Typography>
-              <Typography variant="subtitle1" sx={{ letterSpacing: 1, mb: 2 }}>
+              <Typography component="h3" sx={{ letterSpacing: 1, mb: 2 }}>
                 No.5, Tholkappier Street, Pammal, Chennai - 600070
+                <br />
+                +91 9884595100 || +91 9962786863
               </Typography>
               <FooterSocialLinks />
             </Box>

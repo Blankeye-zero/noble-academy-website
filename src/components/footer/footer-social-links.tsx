@@ -11,14 +11,14 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'Google Maps',
-    link: '',
+    link: 'https://maps.app.goo.gl/cAvFzMaEsaUQNQoy8',
     icon: '/images/icons/google-maps.svg',
   },
-  // {
-  //   name: 'Twitter',
-  //   link: '#',
-  //   icon: '/images/icons/twitter.svg',
-  // }
+  {
+    name: 'Youtube',
+    link: 'https://www.youtube.com/@NobleAcademyPammal',
+    icon: '/images/icons/youtube.svg',
+  }
 ]
 
 interface SocialLinkItemProps {
@@ -50,7 +50,7 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         },
         '& img': {
           fill: 'currentColor',
-          width: 22,
+          width: 30,
           height: 'auto',
         },
       }}
