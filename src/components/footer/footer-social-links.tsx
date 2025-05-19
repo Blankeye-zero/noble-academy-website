@@ -41,8 +41,8 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        width: 36,
-        height: 36,
+        width: 50,
+        height: 50,
         borderRadius: '50%',
         color: 'inherit',
         '&:hover': {
@@ -50,7 +50,7 @@ const SocialLinkItem: FC<SocialLinkItemProps> = ({ item }) => (
         },
         '& img': {
           fill: 'currentColor',
-          width: 30,
+          width: 50,
           height: 'auto',
         },
       }}
@@ -67,13 +67,15 @@ const SocialLinks: FC = () => {
   return (
     <Box sx={{ ml: -1 }}>
       <Box
-        component="ul"
+        
         sx={{
           m: 0,
           p: 0,
           lineHeight: 0,
           borderRadius: 3,
           listStyle: 'none',
+          display:'flex',
+          justifyContent:'space-around'
         }}
       >
         {socialLinks.map((item) => {
