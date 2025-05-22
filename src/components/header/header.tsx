@@ -7,6 +7,7 @@ import { Logo } from '@/components/logo'
 import { Navigation, AuthNavigation } from '@/components/navigation'
 import { useTheme } from '@mui/material/styles'
 import { Menu, Close } from '@mui/icons-material'
+import { GoogleTagManager } from '@next/third-parties/google';
 
 const Header: FC = () => {
   const [visibleMenu, setVisibleMenu] = useState<boolean>(false)
@@ -15,6 +16,7 @@ const Header: FC = () => {
 
   return (
     <Box sx={{ backgroundColor: 'background.paper' }}>
+       <GoogleTagManager gtmId={process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID!} />
       <Container sx={{ py: { xs: 2, md: 3 } }}>
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           <Logo />

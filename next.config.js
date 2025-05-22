@@ -5,7 +5,12 @@ const nextConfig = {
   images: {
     unoptimized: true
   },
-  ...process.env
+  env: {
+  NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID: process.env.NEXT_PUBLIC_GOOGLE_TAG_MANAGER_ID,
+  NEXT_PUBLIC_POSTHOG_KEY: process.env.NEXT_PUBLIC_POSTHOG_KEY,
+  NEXT_PUBLIC_POSTHOG_HOST: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+}
+  
 }
 
 module.exports = nextConfig

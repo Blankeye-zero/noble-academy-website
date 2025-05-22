@@ -18,8 +18,6 @@ class MyDocument extends Document<DocumentProps> {
       <Html lang="en">
         <Head>
           <meta charSet="utf-8" />
-          <link rel="img" href="/images/favicon.png" />
-
           {/* PWA primary color */}
           <meta name="theme-color" content={theme.palette.background.paper} />
 
