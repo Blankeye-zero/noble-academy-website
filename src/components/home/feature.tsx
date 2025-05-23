@@ -92,9 +92,9 @@ const HomeFeature: FC = () => {
                       size={85}
                     />
                     <CircularProgress
-                      disableShrink
-                      thickness={2}
+                      disableShrink={false}
                       variant='determinate'
+                      thickness={2}
                       value={100}
                       size={85}
                       sx={{ transform: 'rotate(96deg) !important', color: '#32dc88', position: 'absolute' }}
