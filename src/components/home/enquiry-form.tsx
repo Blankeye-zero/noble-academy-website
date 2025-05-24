@@ -5,9 +5,10 @@ import Grid from '@mui/material/Grid'
 // import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container'
 // import Typography from '@mui/material/Typography'
-import { Form, useForm } from 'react-hook-form';
+import { Form, FormSubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
+import BasicSelect from './basicSelect'
 
 interface formData {
     Name: string,
@@ -37,18 +38,11 @@ const MyForm: FC = () =>  {
     resolver: zodResolver(schema),
   });
 
-  const [selected, setSelected] = React.useState<"" | { value: string } | undefined>({value: 'LKG'});
-
-  const handleChange = (event: SelectChangeEvent<{ value: string }>) => {
-    console.log(event.target.value)
-    setSelected({value: event.target.value as string});
-  };
-
-  const onSubmit = (data: formData) => console.log(data);
+  const onSubmit = (data: any) => console.log(data);
 
   return (
-  <Form action='aws/api' control={control}>
-  <Container sx={{display:'flex', flexDirection:'column', gap:5,}}>
+  <form onSubmit={handleSubmit(onSubmit)}>
+  <Container sx={{display:'flex', flexDirection:'column', gap:5,mb:15}}>
       <Typography
                   component="h2"
                   sx={{
@@ -116,29 +110,22 @@ const MyForm: FC = () =>  {
   <FormControl>
     <InputLabel htmlFor="Phone">Phone</InputLabel>
   <Input {...register('Phone')} />
-  <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : 'Enter your 10 digit phone number'}</FormHelperText>
+  <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Location">Location</InputLabel>
   <Input {...register('Location')} />
   <FormHelperText id="location-helper-text">Enter your address or area name</FormHelperText>
   </FormControl>
-  <FormControl>
-  <InputLabel htmlFor="Class">Class</InputLabel>
-  <Select {...register('Class')} value={selected?.toString()} onChange={e => setSelected({value: e.target.value as string})}>
-  <MenuItem value=''>None</MenuItem>
-  <MenuItem value='LKG'>LKG</MenuItem>
-  <MenuItem value='UKG'>UKG</MenuItem>
-  </Select>
- </FormControl>
+  <BasicSelect></BasicSelect>
   <FormControl>
     <InputLabel htmlFor="Message">Message</InputLabel>
   <Input {...register('Message')} />
   <FormHelperText id="message-helper-text">Enter any other further details you want to know</FormHelperText>
   </FormControl>
-
+  <input type="submit"/>
   </Container>
-    </Form>
+    </form>
     // <form onSubmit={handleSubmit(onSubmit)}>
     //   <input {...register('Name')} name='Name'/>
     //   {errors.Name && <p>{errors.Name.message}</p>}
