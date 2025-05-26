@@ -53,8 +53,6 @@ const HomeHero: FC = () => {
     <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
       <Container maxWidth="lg">
         <Box sx={{display:"flex", flexDirection: {xs: 'column', md: 'row'}, mt: 10,mb:5}}>
-          <Container sx={{width: "100%", display:'flex', justifyContent: 'center'}}><MyForm></MyForm></Container>
-      {/* <Container sx={{width: "100%", display:'flex', justifyContent: {xs: 'center', md:'center'}}}><iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdEYgHFtGMuYm56e_GCYG0au-WlrXyp6aHl5FjGbJ7PXR8pIA/viewform?embedded=true" width="640" height="1300" frameBorder="0" marginHeight={0} marginWidth={0}>Loading…</iframe></Container> */}
       </Box>
         <Grid container spacing={0} sx={{ flexDirection: { xs: 'column', md: 'unset' } }}>
           <Grid item xs={12} md={7}>

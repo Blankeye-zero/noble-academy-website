@@ -4,24 +4,54 @@ import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
+import { Control, Controller, FieldErrors } from 'react-hook-form';
+import { FormHelperText } from '@mui/material';
 
-const BasicSelect: React.FC = () => {
-  const [value, setValue] = React.useState('');
+type BasicSelectProps= {
+  control: Control<{
+    Class: string;
+    Name: string;
+    Phone: string;
+    Email: string;
+    Location: string;
+    Message: string;
+}, unknown, {
+    Class: string;
+    Name: string;
+    Phone: string;
+    Email: string;
+    Location: string;
+    Message: string;
+}>,
+errors: FieldErrors<{
+    Class: string;
+    Name: string;
+    Phone: string;
+    Email: string;
+    Location: string;
+    Message: string;
+}>
+}
+const BasicSelect: React.FC<BasicSelectProps> = ({control,errors}) => {
+  // const [value, setValue] = React.useState('');
 
-  const handleChange = (event: SelectChangeEvent) => {
-    setValue(event.target.value as string);
-  };
+  // const handleChange = (event: SelectChangeEvent) => {
+  //   setValue(event.target.value as string);
+  // };
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <FormControl fullWidth>
-        <InputLabel id="demo-simple-select-label">Class</InputLabel>
+      <InputLabel id="Class-Select-Label" htmlFor="Class">Class</InputLabel>
+      <Controller name="Class"
+      control={control}
+      defaultValue=''
+      rules={{required: 'Class is required'}}
+      render={({field}) => (
         <Select
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={value}
+        labelId='Class-Select-Label'
+          {...field}
           label="Class"
-          onChange={handleChange}
+          fullWidth
         >
           <MenuItem value={'PREKG'}>PREKG</MenuItem>
           <MenuItem value={'LKG'}>LKG</MenuItem>
@@ -37,7 +67,9 @@ const BasicSelect: React.FC = () => {
           <MenuItem value={'IX STD'}>IX STD</MenuItem>
           <MenuItem value={'X STD'}>X STD</MenuItem>
         </Select>
-      </FormControl>
+      )}
+      />
+      <FormHelperText id="Select-helper-text"> {errors.Class ? errors.Class.message : ''} </FormHelperText>
     </Box>
   );
 }

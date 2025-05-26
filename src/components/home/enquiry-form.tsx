@@ -1,5 +1,5 @@
 import React, { FC } from 'react'
-import { FormControl, FormHelperText, Input, InputLabel, MenuItem, Select, Typography,SelectChangeEvent } from '@mui/material'
+import { FormControl, FormHelperText, Input, InputLabel, MenuItem, Select, Typography,SelectChangeEvent, Button } from '@mui/material'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
 // import { styled } from '@mui/material/styles'
@@ -9,6 +9,7 @@ import { Form, FormSubmitHandler, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import BasicSelect from './basicSelect'
+import { useRouter } from 'next/router'
 
 interface formData {
     Name: string,
@@ -37,8 +38,14 @@ const MyForm: FC = () =>  {
   const { register, handleSubmit, control, formState: { errors } } = useForm({
     resolver: zodResolver(schema),
   });
+  
+  const router = useRouter();
 
-  const onSubmit = (data: any) => console.log(data);
+
+  const onSubmit = (data: formData) => {
+    console.log(data.Name)
+    router.push('/');
+  };
 
   return (
   <form onSubmit={handleSubmit(onSubmit)}>
@@ -100,30 +107,30 @@ const MyForm: FC = () =>  {
   <FormControl>
   <InputLabel htmlFor="Name">Name</InputLabel>
   <Input {...register('Name')} />
-  <FormHelperText id="name-helper-text">Please enter your Name</FormHelperText>
+  <FormHelperText id="name-helper-text">{errors.Name  ? errors.Name.message : 'Please enter your Name'}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Email">Email</InputLabel>
   <Input {...register('Email')} />
-  <FormHelperText id="email-helper-text">We'll never share your email.</FormHelperText>
+  <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : 'We\'ll never share your email.'}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Phone">Phone</InputLabel>
   <Input {...register('Phone')} />
-  <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : ''}</FormHelperText>
+  <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : 'Enter your 10 digit phone number'}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Location">Location</InputLabel>
   <Input {...register('Location')} />
-  <FormHelperText id="location-helper-text">Enter your address or area name</FormHelperText>
+  <FormHelperText id="location-helper-text">  {errors.Location ? errors.Location.message : 'Enter your address or area name'}</FormHelperText>
   </FormControl>
-  <BasicSelect></BasicSelect>
+  <BasicSelect control={control} errors={errors}></BasicSelect>
   <FormControl>
     <InputLabel htmlFor="Message">Message</InputLabel>
   <Input {...register('Message')} />
   <FormHelperText id="message-helper-text">Enter any other further details you want to know</FormHelperText>
   </FormControl>
-  <input type="submit"/>
+  <Button type="submit">Submit</Button>
   </Container>
     </form>
     // <form onSubmit={handleSubmit(onSubmit)}>
