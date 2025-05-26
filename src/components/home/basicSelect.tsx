@@ -44,7 +44,7 @@ const BasicSelect: React.FC<BasicSelectProps> = ({control,errors}) => {
       <InputLabel id="Class-Select-Label" htmlFor="Class">Class</InputLabel>
       <Controller name="Class"
       control={control}
-      defaultValue=''
+      defaultValue='PREKG'
       rules={{required: 'Class is required'}}
       render={({field}) => (
         <Select

@@ -51,6 +51,9 @@ const ExpItem: FC<ExpItemProps> = ({ item }) => {
 const HomeHero: FC = () => {
   return (
     <Box id="hero" sx={{ backgroundColor: 'background.paper', position: 'relative', pt: 4, pb: { xs: 8, md: 10 } }}>
+      <Container sx={{display:'flex', justifyContent:'center'}}>
+      <img src="/images/ukg.jpg"  alt="ukg students" style={{borderRadius: '20px',objectFit:'cover', width:'min(100%, 1000px)', height:'787px'}}  />
+      </Container>
       <Container maxWidth="lg">
         <Box sx={{display:"flex", flexDirection: {xs: 'column', md: 'row'}, mt: 10,mb:5}}>
       </Box>
@@ -133,6 +136,7 @@ const HomeHero: FC = () => {
                         />
                       </g>
                     </svg>
+                    
                   </Typography>{' '}
                   <br />
                 </Typography>

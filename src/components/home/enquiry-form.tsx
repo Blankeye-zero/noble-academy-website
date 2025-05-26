@@ -107,22 +107,22 @@ const MyForm: FC = () =>  {
   <FormControl>
   <InputLabel htmlFor="Name">Name</InputLabel>
   <Input {...register('Name')} />
-  <FormHelperText id="name-helper-text">{errors.Name  ? errors.Name.message : 'Please enter your Name'}</FormHelperText>
+  <FormHelperText id="name-helper-text">{errors.Name  ? errors.Name.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Email">Email</InputLabel>
   <Input {...register('Email')} />
-  <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : 'We\'ll never share your email.'}</FormHelperText>
+  <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Phone">Phone</InputLabel>
   <Input {...register('Phone')} />
-  <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : 'Enter your 10 digit phone number'}</FormHelperText>
+  <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
     <InputLabel htmlFor="Location">Location</InputLabel>
   <Input {...register('Location')} />
-  <FormHelperText id="location-helper-text">  {errors.Location ? errors.Location.message : 'Enter your address or area name'}</FormHelperText>
+  <FormHelperText id="location-helper-text">  {errors.Location ? errors.Location.message : ''}</FormHelperText>
   </FormControl>
   <BasicSelect control={control} errors={errors}></BasicSelect>
   <FormControl>
