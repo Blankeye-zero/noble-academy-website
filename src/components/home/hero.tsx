@@ -54,6 +54,7 @@ const HomeHero: FC = () => {
       <Container sx={{display:'flex', justifyContent:'center'}}>
       <img src="/images/ukg.jpg"  alt="ukg students" style={{borderRadius: '20px',objectFit:'cover', width:'min(100%, 1000px)', height:'787px'}}  />
       </Container>
+       <Container sx={{width: "100%", display:'flex', justifyContent: 'center',background: 'background.paper'}}><MyForm></MyForm></Container>
       <Container maxWidth="lg">
         <Box sx={{display:"flex", flexDirection: {xs: 'column', md: 'row'}, mt: 10,mb:5}}>
       </Box>

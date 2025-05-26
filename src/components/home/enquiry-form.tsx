@@ -30,7 +30,7 @@ const schema = z.object({
   Email: z.string().email("Enter a valid email"),
   Class: z.string().min(1, "Class is required"),
   Location: z.string().min(1, "Location is required"),
-  Message: z.string().min(1, "Message is required"),
+  Message: z.string(),
 });
 
 
@@ -44,12 +44,12 @@ const MyForm: FC = () =>  {
 
   const onSubmit = (data: formData) => {
     console.log(data.Name)
-    router.push('/');
+    router.push('/thanks');
   };
 
   return (
   <form onSubmit={handleSubmit(onSubmit)}>
-  <Container sx={{display:'flex', flexDirection:'column', gap:5,mb:15}}>
+  <Container sx={{display:'flex', flexDirection:'column', gap:5,mb:10, mt:10}}>
       <Typography
                   component="h2"
                   sx={{
@@ -105,29 +105,29 @@ const MyForm: FC = () =>  {
                   <br />
                 </Typography>
   <FormControl>
-  <InputLabel htmlFor="Name">Name</InputLabel>
-  <Input {...register('Name')} />
+  <InputLabel htmlFor="Name" sx={{color: errors.Name ? 'primary.contrast' : 'primary.main'}}>Name</InputLabel>
+  <Input {...register('Name')} sx={{color: '#000000'}}/>
   <FormHelperText id="name-helper-text">{errors.Name  ? errors.Name.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
-    <InputLabel htmlFor="Email">Email</InputLabel>
-  <Input {...register('Email')} />
+    <InputLabel htmlFor="Email" sx={{color: errors.Email? 'primary.contrast' : 'primary.main' }}>Email</InputLabel>
+  <Input {...register('Email')} sx={{color: '#000000'}}/>
   <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
-    <InputLabel htmlFor="Phone">Phone</InputLabel>
-  <Input {...register('Phone')} />
+    <InputLabel htmlFor="Phone" sx={{ color: errors.Phone ? 'primary.contrast' : 'primary.main' }}>Phone</InputLabel>
+  <Input {...register('Phone') } sx={{color: '#000000'}}/>
   <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
-    <InputLabel htmlFor="Location">Location</InputLabel>
-  <Input {...register('Location')} />
+    <InputLabel htmlFor="Location" sx={{ color: errors.Location ? 'primary.contrast' : 'primary.main'}}>Location</InputLabel>
+  <Input {...register('Location')} sx={{color: '#000000'}}/>
   <FormHelperText id="location-helper-text">  {errors.Location ? errors.Location.message : ''}</FormHelperText>
   </FormControl>
   <BasicSelect control={control} errors={errors}></BasicSelect>
   <FormControl>
-    <InputLabel htmlFor="Message">Message</InputLabel>
-  <Input {...register('Message')} />
+    <InputLabel htmlFor="Message" sx={{color: errors.Message? 'primary.contrast' : 'primary.main'}}>Message</InputLabel>
+  <Input {...register('Message')} sx={{color: '#000000'}}/>
   <FormHelperText id="message-helper-text">Enter any other further details you want to know</FormHelperText>
   </FormControl>
   <Button type="submit">Submit</Button>
