@@ -1,6 +1,6 @@
 import React, { FC } from 'react'
 import Box from '@mui/material/Box'
-import Slider, { Settings } from 'react-slick'
+import { Settings } from 'react-slick'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
@@ -8,8 +8,8 @@ import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme, styled } from '@mui/material/styles'
 import IconArrowBack from '@mui/icons-material/ArrowBack'
 import IconArrowForward from '@mui/icons-material/ArrowForward'
-import { MentorCardItem } from '@/components/mentor'
-import { data } from './mentors.data'
+// import { MentorCardItem } from '@/components/mentor'
+// import { data } from './mentors.data'
 
 interface SliderArrowArrow {
   onClick?: () => void
@@ -61,20 +61,20 @@ const HomeOurMentors: FC = () => {
   const { breakpoints } = useTheme()
   const matchMobileView = useMediaQuery(breakpoints.down('md'))
 
-  const sliderConfig: Settings = {
-    infinite: true,
-    // autoplay: true,
-    speed: 300,
-    slidesToShow: matchMobileView ? 1 : 3,
-    slidesToScroll: 1,
-    prevArrow: <SliderArrow type="prev" />,
-    nextArrow: <SliderArrow type="next" />,
-    dots: true,
-    appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
-    customPaging: () => (
-      <Box sx={{ height: 8, width: 30, backgroundColor: 'divider', display: 'inline-block', borderRadius: 4 }} />
-    ),
-  }
+  // const sliderConfig: Settings = {
+  //   infinite: true,
+  //   // autoplay: true,
+  //   speed: 300,
+  //   slidesToShow: matchMobileView ? 1 : 3,
+  //   slidesToScroll: 1,
+  //   prevArrow: <SliderArrow type="prev" />,
+  //   nextArrow: <SliderArrow type="next" />,
+  //   dots: true,
+  //   appendDots: (dots) => <StyledDots>{dots}</StyledDots>,
+  //   customPaging: () => (
+  //     <Box sx={{ height: 8, width: 30, backgroundColor: 'divider', display: 'inline-block', borderRadius: 4 }} />
+  //   ),
+  // }
 
   return (
     <Box

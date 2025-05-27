@@ -1,11 +1,11 @@
 import React, { FC } from 'react'
-import { FormControl, FormHelperText, Input, InputLabel, MenuItem, Select, Typography,SelectChangeEvent, Button } from '@mui/material'
+import { FormControl, FormHelperText, Input, InputLabel, Typography, Button } from '@mui/material'
 import Box from '@mui/material/Box'
-import Grid from '@mui/material/Grid'
+// import Grid from '@mui/material/Grid'
 // import { styled } from '@mui/material/styles'
 import Container from '@mui/material/Container'
 // import Typography from '@mui/material/Typography'
-import { Form, FormSubmitHandler, useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import BasicSelect from './basicSelect'
@@ -42,7 +42,7 @@ const MyForm: FC = () =>  {
   const router = useRouter();
 
 
-  const onSubmit = async (data: formData) => {
+  const onSubmit : (data: formData) => Promise<void> = async (data: formData) => {
     console.log(data.Name)
     const url = 'https://1z86q28zx6.execute-api.ap-south-1.amazonaws.com/prod/enquiry'
     try {

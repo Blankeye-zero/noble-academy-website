@@ -1,8 +1,8 @@
 import React, { FC, useRef } from 'react'
-import Image from 'next/image'
+// import Image from 'next/image'
 import Box from '@mui/material/Box'
 import Grid from '@mui/material/Grid'
-import Slider, { Settings } from 'react-slick'
+import { Settings } from 'react-slick'
 import Container from '@mui/material/Container'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
@@ -10,8 +10,8 @@ import { styled } from '@mui/material/styles'
 import IconArrowBack from '@mui/icons-material/ArrowBack'
 import IconArrowForward from '@mui/icons-material/ArrowForward'
 
-import { TestimonialItem } from '@/components/testimonial'
-import { data } from './testimonial.data'
+// import { TestimonialItem } from '@/components/testimonial'
+// import { data } from './testimonial.data'
 
 interface SliderArrowArrow {
   onClick?: () => void
@@ -43,24 +43,24 @@ const SliderArrow: FC<SliderArrowArrow> = (props) => {
   )
 }
 
-const StyledSlickContainer = styled('div')(() => ({
-  position: 'relative',
+// const StyledSlickContainer = styled('div')(() => ({
+//   position: 'relative',
 
-  '& .slick-list': { marginLeft: '-30px', marginBottom: '24px' },
-}))
+//   '& .slick-list': { marginLeft: '-30px', marginBottom: '24px' },
+// }))
 
 const HomeTestimonial: FC = () => {
-  const sliderRef = useRef(null)
+  // const sliderRef = useRef(null)
 
-  const sliderConfig: Settings = {
-    infinite: true,
-    autoplay: true,
-    speed: 300,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    prevArrow: <SliderArrow type="prev" />,
-    nextArrow: <SliderArrow type="next" />,
-  }
+  // const sliderConfig: Settings = {
+  //   infinite: true,
+  //   autoplay: true,
+  //   speed: 300,
+  //   slidesToShow: 1,
+  //   slidesToScroll: 1,
+  //   prevArrow: <SliderArrow type="prev" />,
+  //   nextArrow: <SliderArrow type="next" />,
+  // }
 
   return (
     <Box id="testimonial" sx={{ pb: { xs: 6, md: 10 }, backgroundColor: 'background.paper' }}>

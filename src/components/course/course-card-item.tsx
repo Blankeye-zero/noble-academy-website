@@ -1,10 +1,10 @@
 import React, { FC } from 'react'
 import Image from 'next/image'
 import Box from '@mui/material/Box'
-import Rating from '@mui/material/Rating'
+// import Rating from '@mui/material/Rating'
 import Typography from '@mui/material/Typography'
-import IconButton, { iconButtonClasses } from '@mui/material/IconButton'
-import ArrowForward from '@mui/icons-material/ArrowForward'
+import { iconButtonClasses } from '@mui/material/IconButton'
+// import ArrowForward from '@mui/icons-material/ArrowForward'
 import { Course } from '@/interfaces/course'
 
 interface Props {

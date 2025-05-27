@@ -1,16 +1,16 @@
-import MyForm from "@/components/home/enquiry-form";
+// import MyForm from "@/components/home/enquiry-form";
 import { MainLayout } from "@/components/layout";
 import { NextPageWithLayout } from "@/interfaces/layout";
-import { Height } from "@mui/icons-material";
-import { Box, Button, Container } from "@mui/material";
+// import { Height } from "@mui/icons-material";
+import { Button, Container } from "@mui/material";
 import { useRouter } from "next/router";
-import { Link } from "react-scroll";
+// import { Link } from "react-scroll";
 
 const Enquiry: NextPageWithLayout = () => {
 
     const router = useRouter()
 
-    const goToHome = () => router.push('/')
+    const goToHome: ()=> Promise<boolean> = () => router.push('/')
     return (
         <Container sx={{width: "100%", display:'flex-column', justifyContent: 'center',background: 'background.paper',height:'100dvh'}}>
             <Container sx={{display:'flex', height:'40%'}}>
