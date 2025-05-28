@@ -44,9 +44,10 @@ const MyForm: FC = () =>  {
 
   const onSubmit : (data: formData) => Promise<void> = async (data: formData) => {
     console.log(data.Name)
-    const url = 'https://1z86q28zx6.execute-api.ap-south-1.amazonaws.com/prod/enquiry'
+    const url = process.env.AWS_ENQUIRY_API 
     try {
-      const res = await fetch(url, {
+      if(url){
+        const res = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
@@ -54,6 +55,10 @@ const MyForm: FC = () =>  {
       if (!res.ok) throw new Error('Network response was not ok');
       const responseData = await res.json();
       console.log(responseData)
+      } else {
+        console.log('No AWS API URL FOUND')
+      }
+      
     } catch (error) {
       console.error('POST request failed:', error);
     }
