@@ -128,11 +128,6 @@ const MyForm: FC = () =>  {
   <FormHelperText id="name-helper-text">{errors.Name  ? errors.Name.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
-    <InputLabel htmlFor="Email" sx={{color: errors.Email? 'primary.contrast' : 'primary.main' }}>Email <sup>(optional)</sup></InputLabel>
-  <Input {...register('Email')} sx={{color: '#000000'}}/>
-  <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : ''}</FormHelperText>
-  </FormControl>
-  <FormControl>
     <InputLabel htmlFor="Phone" sx={{ color: errors.Phone ? 'primary.contrast' : 'primary.main' }}>Phone</InputLabel>
   <Input {...register('Phone') } sx={{color: '#000000'}}/>
   <FormHelperText id="phone-helper-text"> {errors.Phone ? errors.Phone.message : ''}</FormHelperText>
@@ -143,10 +138,18 @@ const MyForm: FC = () =>  {
   <FormHelperText id="location-helper-text">  {errors.Location ? errors.Location.message : ''}</FormHelperText>
   </FormControl>
   <BasicSelect control={control} errors={errors}></BasicSelect>
+
+  <FormControl>
+    <InputLabel htmlFor="Email" sx={{color: errors.Email? 'primary.contrast' : 'primary.main' }}>Email <sup>(optional)</sup></InputLabel>
+  <Input {...register('Email')} sx={{color: '#000000'}}/>
+  <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : ''}</FormHelperText>
+  </FormControl>
+  
   <FormControl>
     <InputLabel htmlFor="Message" sx={{color: errors.Message? 'primary.contrast' : 'primary.main'}}>Message <sup>(optional)</sup></InputLabel>
   <Input {...register('Message')} sx={{color: '#000000'}}/>
   </FormControl>
+
   <Button type="submit">Submit</Button>
   </Container>
     </form>
