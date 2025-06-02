@@ -27,10 +27,10 @@ const schema = z.object({
   Phone: z
     .string()
     .regex(indianPhoneRegex, "Enter a valid Indian phone number"),
-  Email: z.string().email("Enter a valid email"),
+  Email: z.string().email("Enter a valid email").or(z.literal("")).default(""),
   Class: z.string().min(1, "Class is required"),
   Location: z.string().min(1, "Location is required"),
-  Message: z.string(),
+  Message: z.string().default(""),
 });
 
 
@@ -128,7 +128,7 @@ const MyForm: FC = () =>  {
   <FormHelperText id="name-helper-text">{errors.Name  ? errors.Name.message : ''}</FormHelperText>
   </FormControl>
   <FormControl>
-    <InputLabel htmlFor="Email" sx={{color: errors.Email? 'primary.contrast' : 'primary.main' }}>Email</InputLabel>
+    <InputLabel htmlFor="Email" sx={{color: errors.Email? 'primary.contrast' : 'primary.main' }}>Email <sup>(optional)</sup></InputLabel>
   <Input {...register('Email')} sx={{color: '#000000'}}/>
   <FormHelperText id="email-helper-text">{ errors.Email ? errors.Email.message : ''}</FormHelperText>
   </FormControl>
@@ -144,9 +144,8 @@ const MyForm: FC = () =>  {
   </FormControl>
   <BasicSelect control={control} errors={errors}></BasicSelect>
   <FormControl>
-    <InputLabel htmlFor="Message" sx={{color: errors.Message? 'primary.contrast' : 'primary.main'}}>Message</InputLabel>
+    <InputLabel htmlFor="Message" sx={{color: errors.Message? 'primary.contrast' : 'primary.main'}}>Message <sup>(optional)</sup></InputLabel>
   <Input {...register('Message')} sx={{color: '#000000'}}/>
-  <FormHelperText id="message-helper-text">Enter any other further details you want to know</FormHelperText>
   </FormControl>
   <Button type="submit">Submit</Button>
   </Container>

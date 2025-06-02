@@ -12,9 +12,9 @@ type BasicSelectProps= {
     Class: string;
     Name: string;
     Phone: string;
-    Email: string;
+    Email?: string | undefined;
     Location: string;
-    Message: string;
+    Message?: string | undefined;
 }, unknown, {
     Class: string;
     Name: string;
@@ -41,7 +41,7 @@ const BasicSelect: React.FC<BasicSelectProps> = ({control,errors}) => {
 
   return (
     <Box sx={{ minWidth: 120 }}>
-      <InputLabel id="Class-Select-Label" htmlFor="Class" sx={{color:errors.Class ? 'primary.contrast' : 'primary.main'}}>Class*</InputLabel>
+      <InputLabel id="Class-Select-Label" htmlFor="Class" sx={{color:errors.Class ? 'primary.contrast' : 'primary.main'}}>Class</InputLabel>
       <Controller name="Class"
       control={control}
       defaultValue='PREKG'
