@@ -20,13 +20,12 @@ interface formData {
     Message: string
 } 
 
-const indianPhoneRegex = /^[6-9]\d{9}$/;
+// const indianPhoneRegex = /^[6-9]\d{9}$/;
 
 const schema = z.object({
   Name: z.string().min(1, "Name is required"),
   Phone: z
-    .string()
-    .regex(indianPhoneRegex, "Enter a valid Indian phone number"),
+    .string(),
   Email: z.string().email("Enter a valid email").or(z.literal("")).default(""),
   Class: z.string().min(1, "Class is required"),
   Location: z.string().min(1, "Location is required"),
