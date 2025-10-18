@@ -19,10 +19,10 @@ const Footer: FC = () => {
                 Noble Academy
               </Typography>
               <Typography component="h3" sx={{ letterSpacing: 1, mb: 2, fontSize:20 }}>
-                No.5, Tholkappier Street, Pammal, Chennai - 600070
+                No.1, Gandhi Nagar Main Road, Gandhi Nagar, Anakaputhur, Chennai - 600070
                 <br />
                 <br />
-                +91 9884595100 || +91 9962786863
+                +91 9962786863
               </Typography>
               <Container sx={{mt:5}}></Container>
               <FooterSocialLinks />

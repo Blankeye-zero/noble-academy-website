@@ -11,7 +11,7 @@ export const socialLinks: SocialLink[] = [
   },
   {
     name: 'Google Maps',
-    link: 'https://maps.app.goo.gl/cAvFzMaEsaUQNQoy8',
+    link: 'https://maps.app.goo.gl/VdYVe5A769w6bNAo8',
     icon: '/images/icons/google-maps.svg',
   },
   {
